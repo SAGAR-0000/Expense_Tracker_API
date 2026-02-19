@@ -8,7 +8,7 @@ from .serializers import ExpenseSerializer
 # Create your views here.
 
 @api_view(['GET','POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])  
 def Expense_List(request):
     if request.method=='GET':
         expenses=Expense.objects.filter(owner=request.user)
